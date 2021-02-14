@@ -1,7 +1,7 @@
 FROM python:alpine
 
 LABEL maintainer="marcello.desales@gmail.com"
-LABEL origin="https://github.com/marcellodesales/docker-pycobertura"
+LABEL origin="https://github.com/marcellodesales/pycobertura-reports-docker"
 
 #RUN apk add gcc g++ libxml2-dev libxslt-dev
 # https://stackoverflow.com/questions/35931579/how-can-i-install-lxml-in-docker/57535436#57535436
