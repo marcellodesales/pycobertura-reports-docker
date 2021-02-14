@@ -12,4 +12,7 @@ RUN apk add --no-cache --virtual .build-deps gcc libc-dev libxslt-dev && \
 
 RUN pip install pycobertura
 
-ENTRYPOINT ["pycobertura"]
+COPY entrypoint.sh /entrypoint.sh
+
+RUN pycobertura
+ENTRYPOINT ["/entrypoint.sh"]
