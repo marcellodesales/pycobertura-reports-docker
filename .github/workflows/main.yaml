@@ -65,23 +65,23 @@ jobs:
           password: ${{ secrets.REGISTRY_DOCKERHUB_TOKEN }}
 
       - name: Tag the latest image in the public repo
-        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura:${GITHUB_SHA}
+        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura-reports:${GITHUB_SHA}
 
       - name: Tag the latest image in the public repo
-        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura:${GITHUB_REF##*/}
+        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura-reports:${GITHUB_REF##*/}
 
        # Latest version of image
       - name: Docker Push the latest image
         if: endsWith(github.ref, '/main')
-        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura
+        run: docker tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${GITHUB_REF##*/} marcellodesales/pycobertura-reports
 
       - name: Tag the latest image in the public repo
-        run: docker push marcellodesales/pycobertura:${GITHUB_SHA}
+        run: docker push marcellodesales/pycobertura-reports:${GITHUB_SHA}
 
       - name: Tag the latest image in the public repo
-        run: docker push marcellodesales/pycobertura:${GITHUB_REF##*/}
+        run: docker push marcellodesales/pycobertura-reports:${GITHUB_REF##*/}
 
        # Latest version of image
       - name: Docker Push the latest image
         if: endsWith(github.ref, '/main')
-        run: docker push  marcellodesales/pycobertura
+        run: docker push  marcellodesales/pycobertura-reports
